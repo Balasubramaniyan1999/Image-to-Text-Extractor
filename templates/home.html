@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{url_for('static',filename = 'home.css')}}">
+</head>
+<body>
+        <div class="design">
+            <h3 style="text-align: center;">Image 2 Text Extractor</h3>
+            <form method="post" action="{{ url_for('extract') }}" enctype="multipart/form-data">
+                <input type="file" name="file" id="file">
+                <input type="submit" value="Extract text"><br>
+                <br>
+                <label for="extract">Extracted Text :</label>
+                <textarea id="extract" name="extract" rows="5" cols="50">{{output}}</textarea>
+            </form>
+        </div>
+</body>
+</html>
